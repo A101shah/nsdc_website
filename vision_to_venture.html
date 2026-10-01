@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Vision to Venture Event Highlights - National Student Data Corps — NMIMS Mumbai Chapter.">
+  <meta name="theme-color" content="#071a3d">
+  <title>Vision to Venture Highlights | NSDC NMIMS Mumbai</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=6">
+</head>
+
+<body>
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Glassmorphic Header Navigation -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="NSDC NMIMS Mumbai home">
+        <div class="brand-logo-wrapper">
+          <img src="assets/nsdc-logo.jpg" alt="NSDC Logo" class="brand-logo-img">
+        </div>
+        <span class="brand-copy">
+          <strong>NSDC</strong>
+          <small>NMIMS · MUMBAI</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#events" class="nav-link">Events</a>
+        <a href="index.html#newsletter" class="nav-link">Newsletter</a>
+        <a href="completed.html" class="nav-link active">Past Events</a>
+        <a href="index.html" class="nav-cta">Back to Home <span>↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Event Details Hero -->
+    <section class="events section section-dark" style="padding-top: 150px; min-height: 100vh;">
+      <div class="container">
+        
+        <div style="margin-bottom: 2rem;">
+          <a href="completed.html" class="text-link">← Back to Past Events</a>
+        </div>
+
+        <div class="reveal reveal-up" style="text-align: center; margin-bottom: 4rem; margin-top: 2rem;">
+          <div class="section-kicker section-kicker-light" style="justify-content: center; align-items: center; margin-bottom: 1.5rem;">
+            <span>HIGHLIGHTS</span>
+            <span style="width: 4px; height: 4px; border-radius: 50%; background: var(--cyan); display: inline-block;"></span>
+            <p style="margin: 0;">DATA MAVERICKS X NSDC</p>
+          </div>
+          <div>
+            <h2 style="font: 500 clamp(48px, 6vw, 80px)/.98 'Space Grotesk', sans-serif; letter-spacing: -.05em; margin-bottom: 1.5rem;">Vision to <em style="font-family: Georgia, serif; color: var(--blue); font-style: italic;">Venture</em></h2>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem;">Sept 26, 2026 &nbsp;&bull;&nbsp; Speaker: Mrs. Prachi Jain</p>
+          </div>
+        </div>
+
+        <!-- After Movie Reel -->
+        <div class="reveal reveal-up">
+          <h3 style="margin-bottom: 1rem; color: var(--color-light);">Event After-Movie</h3>
+          <p style="opacity: 0.8; margin-bottom: 2rem;">Check out the glimpses from our session!</p>
+          <div class="embed-container" style="display: flex; justify-content: center; margin: 3rem 0; width: 100%;">
+            <video id="afterMovieVideo" controls style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); background: #000; outline: none; width: 400px; height: 710px; max-width: 100%; object-fit: cover; transition: all 2.5s cubic-bezier(0.4, 0, 0.2, 1);">
+              <source src="events/Vision To Venture/after_movie.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <script>
+            const video = document.getElementById('afterMovieVideo');
+            video.addEventListener('play', function() {
+              if (!this.classList.contains('expanded')) {
+                this.classList.add('expanded');
+                
+                // Add a delay before the expansion starts (e.g. wait 1.5 seconds)
+                setTimeout(() => {
+                  // Calculate explicit pixel values to allow CSS to interpolate smoothly
+                  const containerWidth = this.parentElement.clientWidth;
+                  const targetWidth = Math.min(900, containerWidth); 
+                  const targetHeight = targetWidth * (9 / 16);
+                  
+                  this.style.width = targetWidth + 'px';
+                  this.style.height = targetHeight + 'px';
+                  // Keeping object-fit as cover prevents visual snapping
+                }, 1500); // 1500 milliseconds = 1.5 seconds delay
+              }
+            }, { once: true });
+
+            // Ensure it remains responsive if the user resizes the window after expansion
+            window.addEventListener('resize', function() {
+              if (video.classList.contains('expanded')) {
+                video.style.transition = 'none'; // disable transition for instant resize tracking
+                const containerWidth = video.parentElement.clientWidth;
+                const targetWidth = Math.min(900, containerWidth); 
+                const targetHeight = targetWidth * (9 / 16);
+                video.style.width = targetWidth + 'px';
+                video.style.height = targetHeight + 'px';
+              }
+            });
+          </script>
+        </div>
+        
+        <!-- Event Photos -->
+        <div class="reveal reveal-up" style="margin-top: 5rem;">
+          <h3 style="margin-bottom: 1rem; color: var(--color-light);">Event Gallery</h3>
+          <p style="opacity: 0.8; margin-bottom: 2rem;">Photos from the session. Upload your photos to <code>events/Vision To Venture/</code> and link them below.</p>
+          
+          <div class="photo-grid">
+            <img src="events/Vision To Venture/photo_1.jpg" alt="Event Photo 1" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;">
+            <img src="events/Vision To Venture/photo_2.jpg" alt="Event Photo 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;">
+            <img src="events/Vision To Venture/photo_3.jpg" alt="Event Photo 3" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;">
+            <img src="events/Vision To Venture/photo_4.jpg" alt="Event Photo 4" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;">
+            <img src="events/Vision To Venture/photo_5.jpg" alt="Event Photo 5" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;">
+            <img src="events/Vision To Venture/photo_6.jpg" alt="Event Photo 6" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;">
+            <img src="events/Vision To Venture/photo_7.jpg" alt="Event Photo 7" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;">
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="brand footer-brand" href="#">
+          <div class="brand-logo-wrapper">
+            <img src="assets/nsdc-logo.jpg" alt="NSDC Logo" class="brand-logo-img">
+          </div>
+          <span class="brand-copy">
+            <strong>NSDC</strong>
+            <small>NMIMS · MUMBAI</small>
+          </span>
+        </a>
+        <p>Data for development.</p>
+        <a href="#" class="back-top">BACK TO TOP ↑</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> NSDC NMIMS MUMBAI</span>
+        <span>NATIONAL STUDENT DATA CORPS · CHAPTER 01</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

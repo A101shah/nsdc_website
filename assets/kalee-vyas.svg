@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <defs>
+    <linearGradient id="gradKV" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09204a"/>
+      <stop offset="50%" stop-color="#1257ba"/>
+      <stop offset="100%" stop-color="#3187ff"/>
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#gradKV)"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+  <circle cx="200" cy="210" r="80" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.4"/>
+  <text x="50%" y="47%" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="76" font-weight="700" fill="#ffffff" letter-spacing="-2">KV</text>
+  <text x="50%" y="64%" dominant-baseline="middle" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" font-weight="500" fill="#a9dcff" letter-spacing="3">VICE CHAIRPERSON</text>
+</svg>

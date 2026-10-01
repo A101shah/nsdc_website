@@ -1,132 +1,511 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="National Student Data Corps — NMIMS Mumbai Chapter. A student-led community for data science, AI, research and collaboration.">
+  <meta name="description"
+    content="National Student Data Corps — NMIMS Mumbai Chapter. A student-led community for data science, AI, research and collaboration.">
   <meta name="theme-color" content="#071a3d">
   <title>NSDC NMIMS Mumbai | Data for Development</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
-<body>
-  <div class="noise"></div>
 
-  <header class="site-header" id="top">
+<body>
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Glassmorphic Header Navigation -->
+  <header class="site-header" id="siteHeader">
     <nav class="nav container" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="NSDC NMIMS Mumbai home">
-        <span class="brand-mark" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </span>
+      <a class="brand" href="#hero" aria-label="NSDC NMIMS Mumbai home">
+        <div class="brand-logo-wrapper">
+          <img src="assets/nsdc-logo.jpg" alt="NSDC Logo" class="brand-logo-img">
+        </div>
         <span class="brand-copy">
           <strong>NSDC</strong>
           <small>NMIMS · MUMBAI</small>
         </span>
       </a>
 
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
 
       <div class="nav-links" id="nav-links">
-        <a href="#about">About</a>
-        <a href="#activities">Activities</a>
-        <a href="#team">Team</a>
-        <a href="#mentors">Mentors</a>
-        <a href="#connect" class="nav-cta">Connect <span>↗</span></a>
+        <a href="#about" class="nav-link" data-nav="about">About</a>
+        <a href="#events" class="nav-link" data-nav="events">Events</a>
+        <a href="#newsletter" class="nav-link" data-nav="newsletter">Newsletter</a>
+        <a href="#activities" class="nav-link" data-nav="activities">Activities</a>
+        <a href="#mentors" class="nav-link" data-nav="mentors">Mentors</a>
+        <a href="#team" class="nav-link" data-nav="team">Team</a>
+        <!-- <a href="#ideas" class="nav-link" data-nav="ideas">Ideas</a> -->
+        <a href="#connect" class="nav-cta" data-nav="connect">Connect <span>↗</span></a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero hero-home" aria-label="NSDC NMIMS Mumbai">
+    <!-- Clean Main Hero Section with Updated Wallpaper & Dynamic Orbits -->
+    <section class="hero hero-home" id="hero" data-section="01" data-section-name="HOME">
       <div class="hero-wallpaper" aria-hidden="true"></div>
       <div class="hero-vignette" aria-hidden="true"></div>
-      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
-      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+
+      <!-- Dynamic Interactive Orbits -->
+      <div class="hero-orbits-container" id="heroOrbitsContainer" aria-hidden="true">
+        <div class="hero-orbit orbit-one">
+          <span class="orbit-node node-1"></span>
+          <span class="orbit-node node-2"></span>
+        </div>
+        <div class="hero-orbit orbit-two">
+          <span class="orbit-node node-3"></span>
+        </div>
+        <div class="hero-orbit orbit-three"></div>
+      </div>
 
       <div class="container hero-content">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span class="eyebrow-line"></span> NATIONAL STUDENT DATA CORPS</p>
-          <h1>DATA FOR<br><em>DEVELOPMENT.</em></h1>
-          <p class="hero-chapter">NSDC CHAPTER · NMIMS, MUMBAI</p>
-          <p class="hero-lead">A student-led community for everyone interested in data science — learning, building, researching and connecting with a wider data community.</p>
+        <div class="hero-copy reveal reveal-up">
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span>
+            <span>NATIONAL STUDENT DATA CORPS</span>
+          </p>
+
+          <h1>DATA FOR<br><em>DEVELOPMENT</em></h1>
+
+          <p class="hero-chapter">NMIMS MUMBAI CHAPTER</p>
+
+          <p class="hero-lead">
+            A student-led community for everyone interested in data science — learning, building, researching, and
+            connecting with a wider data ecosystem.
+          </p>
+
           <div class="hero-actions">
-            <a href="#about" class="button button-primary">Explore our chapter <span>↓</span></a>
-            <a href="#connect" class="button button-ghost">Get involved <span>↗</span></a>
+            <a href="#about" class="button button-primary">
+              <span>Explore Chapter</span>
+              <span class="btn-icon">↓</span>
+            </a>
+            <a href="#connect" class="button button-ghost">
+              <span>Get Involved</span>
+              <span class="btn-icon">↗</span>
+            </a>
           </div>
         </div>
       </div>
 
+      <!-- Interactive Bottom Scroll Indicator -->
       <div class="hero-bottom container">
-        <span>SCROLL TO DISCOVER</span>
-        <span class="scroll-line"></span>
-        <span>01 / 06</span>
+        <span id="scrollKicker">SCROLL TO DISCOVER</span>
+        <span class="scroll-line">
+          <span class="scroll-line-fill" id="scrollLineFill"></span>
+        </span>
+        <span id="sectionCounter">01 / 09</span>
       </div>
     </section>
 
-    <section class="intro section" id="about">
-      <div class="container split">
-        <div class="section-kicker reveal"><span>01</span><p>THE CHAPTER</p></div>
-        <div class="intro-copy reveal">
-          <p class="display-text">Where students turn <span>data</span> into ideas, ideas into projects, and projects into impact.</p>
-          <p class="body-copy">The NSDC Chapter of NMIMS University is for everyone interested in data science. Founded in April 2026, the chapter creates a space to learn, experiment, share and build with a community of fellow data enthusiasts.</p>
-          <a href="#connect" class="text-link">Become part of the conversation <span>→</span></a>
+    <!-- Section 01 - The Chapter (With Gyroscope Image Beside Text) -->
+    <section class="intro section" id="about" data-section="01" data-section-name="THE CHAPTER">
+      <div class="container split intro-split">
+        <div class="section-kicker reveal reveal-up">
+          <span>01</span>
+          <p>THE CHAPTER</p>
+        </div>
+        <div class="intro-main">
+          <div class="intro-copy reveal reveal-up reveal-delay">
+            <p class="display-text">Where students turn <span>data</span> into ideas, ideas into projects, and projects
+              into impact.</p>
+            <p class="body-copy">The NSDC Chapter of NMIMS University is for everyone interested in data science.
+              Founded to empower young minds, the chapter creates a space to learn, experiment, share and build with a
+              vibrant community of fellow data enthusiasts.</p>
+            <a href="#connect" class="text-link">Become part of the conversation <span>→</span></a>
+          </div>
+
+          <!-- Gyroscope Graphic Image beside text in Section 01 -->
+          <div class="intro-visual reveal reveal-scale">
+            <div class="intro-graphic-card">
+              <img src="assets/gyroscope-graphic.jpg" alt="NSDC Gyroscope Emblem" class="intro-gyro-img">
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="container stat-grid reveal">
-        <div class="stat-card"><strong>01</strong><span>Student-led<br>chapter</span></div>
-        <div class="stat-card"><strong>02</strong><span>Faculty<br>advisors</span></div>
-        <div class="stat-card"><strong>06</strong><span>Core team<br>members</span></div>
-        <div class="stat-card stat-card-accent"><strong>∞</strong><span>Ideas worth<br>exploring</span></div>
+      <div class="container stat-grid reveal reveal-up">
+        <div class="stat-card" data-count="1">
+          <strong class="count-num" data-target="1">01</strong>
+          <span>Student-led<br>chapter</span>
+        </div>
+        <div class="stat-card" data-count="2">
+          <strong class="count-num" data-target="2">02</strong>
+          <span>Faculty<br>advisors</span>
+        </div>
+        <div class="stat-card" data-count="6">
+          <strong class="count-num" data-target="6">06</strong>
+          <span>Core team<br>members</span>
+        </div>
+        <div class="stat-card stat-card-accent">
+          <strong>∞</strong>
+          <span>Ideas worth<br>exploring</span>
+        </div>
       </div>
     </section>
 
-    <section class="about-nsdc section section-dark">
-      <div class="container split split-wide">
-        <div class="about-visual reveal"><div class="about-image"><img src="assets/hero-left.jpg" alt="Open sky and landscape"><div class="about-stamp"><span>NSDC</span><strong>DATA<br>FOR<br>DEVELOPMENT</strong></div></div></div>
-        <div class="about-copy reveal"><div class="section-kicker section-kicker-light"><span>02</span><p>ABOUT NSDC</p></div><h2>A community designed to <em>evolve</em> with data.</h2><p>NMIMS National Student Data Corps comes under the Artificial Intelligence and Data Science Department and was founded in January 2023. It is an initiative by the Northeast Big Data Hub that helps students evolve with an ever-changing field while encouraging interaction and brainstorming with fellow enthusiasts.</p><div class="quote-line">LEARN · QUESTION · BUILD · SHARE</div></div>
-      </div>
-    </section>
 
-    <section class="activities section" id="activities">
+    <!-- Upcoming Events Section -->
+    <section class="events section section-dark" id="events" data-section="02" data-section-name="EVENTS">
       <div class="container">
-        <div class="section-heading reveal"><div class="section-kicker"><span>03</span><p>WHAT WE DO</p></div><div><h2>Learning should be <em>hands-on.</em></h2><p>Our chapter is built around practical experiences, conversations with the industry and projects that connect data with real-world questions.</p></div></div>
+        <div class="section-heading reveal reveal-up">
+          <div class="section-kicker section-kicker-light">
+            <span>02</span>
+            <p>UPCOMING EVENTS</p>
+          </div>
+          <div>
+            <h2>Join us at our <br><em>next session.</em></h2>
+          </div>
+        </div>
+
+        <div id="no-events-message" style="text-align: center; margin-top: 2rem; opacity: 0.7;">
+          <p>No upcoming events at the moment. Stay tuned!</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="completed.html" class="button button-ghost">View Completed Events <span>→</span></a>
+        </div>
+      </div>
+    </section>
+    <!-- Newsletter Section (Coming Soon) -->
+    <section class="newsletter section section-dark" id="newsletter" data-section="03" data-section-name="NEWSLETTER">
+      <div class="container newsletter-container">
+        <div class="newsletter-box reveal reveal-scale">
+          <div class="section-kicker section-kicker-light">
+            <span>03</span>
+            <p>NEWSLETTER</p>
+          </div>
+          <div class="newsletter-content">
+            <h2>Stay updated with <em>our community.</em></h2>
+            <div class="coming-soon-slipboard">
+              <span class="slipboard-text">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About NSDC Dark Section -->
+    <section class="about-nsdc section section-dark" id="about-nsdc" data-section="04" data-section-name="ABOUT NSDC">
+      <div class="container about-clean-container">
+        <div class="about-copy reveal reveal-up">
+          <div class="section-kicker section-kicker-light">
+            <span>04</span>
+            <p>ABOUT NSDC</p>
+          </div>
+          <h2>A community designed to <em>evolve</em> with data.</h2>
+          <p class="about-lead">NMIMS National Student Data Corps comes under the Artificial Intelligence and Data
+            Science Department and was founded in January 2023. It is an initiative by the Northeast Big Data Hub that
+            helps students evolve with an ever-changing field while encouraging interaction and brainstorming with
+            fellow enthusiasts.</p>
+
+          <div class="about-pillars">
+            <div class="pillar-box">
+              <strong>LEARN</strong>
+              <span>Workshops & AI fundamentals</span>
+            </div>
+            <div class="pillar-box">
+              <strong>QUESTION</strong>
+              <span>Ethics & open inquiry</span>
+            </div>
+            <div class="pillar-box">
+              <strong>BUILD</strong>
+              <span>Real-world datasets & projects</span>
+            </div>
+            <div class="pillar-box">
+              <strong>SHARE</strong>
+              <span>Community & global network</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities section" id="activities" data-section="05" data-section-name="WHAT WE DO">
+      <div class="container">
+        <div class="section-heading reveal reveal-up">
+          <div class="section-kicker">
+            <span>05</span>
+            <p>WHAT WE DO</p>
+          </div>
+          <div>
+            <h2>Learning should be <em>hands-on.</em></h2>
+            <p>Our chapter is built around practical experiences, conversations with the industry and projects that
+              connect data with real-world questions.</p>
+          </div>
+        </div>
+
         <div class="activity-list">
-          <article class="activity reveal"><span class="activity-number">01</span><div class="activity-icon">↗</div><div><h3>Workshops & Seminars</h3><p>Hands-on learning across machine learning, AI ethics, climate data analytics, urban informatics and more.</p></div><span class="activity-arrow">→</span></article>
-          <article class="activity reveal"><span class="activity-number">02</span><div class="activity-icon">⌁</div><div><h3>Hackathons & Projects</h3><p>Build, test and showcase solutions while turning datasets and ideas into tangible projects.</p></div><span class="activity-arrow">→</span></article>
-          <article class="activity reveal"><span class="activity-number">03</span><div class="activity-icon">◎</div><div><h3>Industry & Academia</h3><p>Guest lectures, mentorship programs and project showcases designed to connect students with practitioners.</p></div><span class="activity-arrow">→</span></article>
-          <article class="activity reveal"><span class="activity-number">04</span><div class="activity-icon">✦</div><div><h3>Open Data & Research</h3><p>Students are encouraged to contribute to open datasets and community research initiatives aligned with NSDC’s mission.</p></div><span class="activity-arrow">→</span></article>
-          <article class="activity reveal"><span class="activity-number">05</span><div class="activity-icon">∞</div><div><h3>Chapter Collaboration</h3><p>Collaborate with other NSDC Chapters globally to broaden exposure, perspectives and professional networks.</p></div><span class="activity-arrow">→</span></article>
+          <article class="activity reveal reveal-up" data-delay="1">
+            <span class="activity-number">01</span>
+            <div class="activity-icon">↗</div>
+            <div>
+              <h3>Workshops & Seminars</h3>
+              <p>Hands-on learning across machine learning, AI ethics, climate data analytics, urban informatics and
+                more.</p>
+            </div>
+            <span class="activity-arrow">→</span>
+          </article>
+          <article class="activity reveal reveal-up" data-delay="2">
+            <span class="activity-number">02</span>
+            <div class="activity-icon">⌁</div>
+            <div>
+              <h3>Hackathons & Projects</h3>
+              <p>Build, test and showcase solutions while turning datasets and ideas into tangible projects.</p>
+            </div>
+            <span class="activity-arrow">→</span>
+          </article>
+          <article class="activity reveal reveal-up" data-delay="3">
+            <span class="activity-number">03</span>
+            <div class="activity-icon">◎</div>
+            <div>
+              <h3>Industry & Academia</h3>
+              <p>Guest lectures, mentorship programs and project showcases designed to connect students with
+                practitioners.</p>
+            </div>
+            <span class="activity-arrow">→</span>
+          </article>
+          <article class="activity reveal reveal-up" data-delay="4">
+            <span class="activity-number">04</span>
+            <div class="activity-icon">✦</div>
+            <div>
+              <h3>Open Data & Research</h3>
+              <p>Students are encouraged to contribute to open datasets and community research initiatives aligned with
+                NSDC’s mission.</p>
+            </div>
+            <span class="activity-arrow">→</span>
+          </article>
+          <article class="activity reveal reveal-up" data-delay="5">
+            <span class="activity-number">05</span>
+            <div class="activity-icon">∞</div>
+            <div>
+              <h3>Chapter Collaboration</h3>
+              <p>Collaborate with other NSDC Chapters globally to broaden exposure, perspectives and professional
+                networks.</p>
+            </div>
+            <span class="activity-arrow">→</span>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="people section section-light" id="mentors">
-      <div class="container"><div class="section-heading reveal"><div class="section-kicker"><span>04</span><p>MENTORS</p></div><div><h2>Guidance behind<br>the <em>community.</em></h2></div></div>
+    <!-- Mentors Section -->
+    <section class="people section section-light" id="mentors" data-section="06" data-section-name="MENTORS">
+      <div class="container">
+        <div class="section-heading reveal reveal-up">
+          <div class="section-kicker">
+            <span>06</span>
+            <p>MENTORS</p>
+          </div>
+          <div>
+            <h2>Guidance behind <br>the <em>community.</em></h2>
+          </div>
+        </div>
         <div class="mentor-grid">
-          <article class="person-card mentor-card reveal"><div class="person-photo"><img src="assets/jaya-jeswani.jpg" alt="Jaya Jeswani"></div><div class="person-info"><span>FACULTY ADVISOR</span><h3>Jaya Jeswani</h3><p>Founder and Faculty advisor at MPSTME NSDC Chapter</p><a href="mailto:Jaya.Jeswani@nmims.edu">Jaya.Jeswani@nmims.edu <span>↗</span></a></div></article>
-          <article class="person-card mentor-card reveal"><div class="person-photo"><img src="assets/soni-bhambar.jpg" alt="Soni Bhambar"></div><div class="person-info"><span>FACULTY ADVISOR</span><h3>Soni Bhambar</h3><p>Faculty Advisor</p><a href="mailto:Soni.Bhambar@nmims.edu">Soni.Bhambar@nmims.edu <span>↗</span></a></div></article>
+          <article class="person-card mentor-card reveal reveal-up">
+            <div class="person-photo">
+              <img src="assets/jaya ma_am.jpg" alt="Jaya Jeswani" loading="lazy">
+            </div>
+            <div class="person-info">
+              <span>FACULTY ADVISOR</span>
+              <h3>Jaya Jeswani</h3>
+              <p>Founder and Faculty advisor at MPSTME NSDC Chapter</p>
+              <a href="mailto:Jaya.Jeswani@nmims.edu">Jaya.Jeswani@nmims.edu <span>↗</span></a>
+            </div>
+          </article>
+          <article class="person-card mentor-card reveal reveal-up reveal-delay">
+            <div class="person-photo">
+              <img src="assets/soni ma_am.png" alt="Soni Bhambar" loading="lazy">
+            </div>
+            <div class="person-info">
+              <span>FACULTY ADVISOR</span>
+              <h3>Soni Bhambar</h3>
+              <p>Faculty Advisor</p>
+              <a href="mailto:Soni.Bhambar@nmims.edu">Soni.Bhambar@nmims.edu <span>↗</span></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="team section" id="team"><div class="container"><div class="section-heading reveal"><div class="section-kicker"><span>05</span><p>CORE TEAM · 2026–27</p></div><div><h2>The people who<br><em>make it happen.</em></h2></div></div>
-      <div class="team-grid">
-        <article class="person-card reveal"><div class="person-photo"><img src="assets/manthan-singh.jpg" alt="Manthan Singh"></div><div class="person-info"><span>CHAIRPERSON</span><h3>Manthan Singh</h3><p>NSDC Newsletter Editor</p><a href="mailto:manthan.singh78@nmims.in">Email <span>↗</span></a></div></article>
-        <article class="person-card reveal"><div class="person-photo"><img src="assets/kalee-vyas.jpg" alt="Kalee Vyas"></div><div class="person-info"><span>VICE CHAIRPERSON</span><h3>Kalee Vyas</h3><p>NSDC & Operations & Events</p><a href="mailto:kalee.vyas56@nmims.in">Email <span>↗</span></a></div></article>
-        <article class="person-card reveal"><div class="person-photo"><img src="assets/pranati-bhoga.jpg" alt="Pranati Bhoga"></div><div class="person-info"><span>PRESIDENT</span><h3>Pranati Bhoga</h3><p>NSDC Social Media & Content Writing</p><a href="mailto:pranati.bhoga72@nmims.in">Email <span>↗</span></a></div></article>
-        <article class="person-card reveal"><div class="person-photo"><img src="assets/snigdha-mishra.jpg" alt="Snigdha Mishra"></div><div class="person-info"><span>PRESIDENT</span><h3>Snigdha Mishra</h3><p>NSDC Newsletter Editor & Research & Development</p><a href="mailto:snigdha.mishra53@nmims.in">Email <span>↗</span></a></div></article>
-        <article class="person-card reveal"><div class="person-photo"><img src="assets/om-parekh.jpg" alt="Om Parekh"></div><div class="person-info"><span>PRESIDENT</span><h3>Om Parekh</h3><p>NSDC Marketing & Public Relations</p><a href="mailto:om.parekh49@nmims.in">Email <span>↗</span></a></div></article>
-        <article class="person-card reveal"><div class="person-photo"><img src="assets/aarav-shah.jpg" alt="Aarav Shah"></div><div class="person-info"><span>PRESIDENT</span><h3>Aarav Shah</h3><p>NSDC Technical</p><a href="mailto:aarav.shah27@nmims.in">Email <span>↗</span></a></div></article>
+    <!-- Team Section -->
+    <section class="team section" id="team" data-section="07" data-section-name="CORE TEAM">
+      <div class="container">
+        <div class="section-heading reveal reveal-up">
+          <div class="section-kicker">
+            <span>07</span>
+            <p>CORE TEAM · 2026–27</p>
+          </div>
+          <div>
+            <h2>The people who <br><em>make it happen.</em></h2>
+          </div>
+        </div>
+        <div class="team-grid">
+          <article class="person-card reveal reveal-up">
+            <div class="person-photo">
+              <img src="assets/manthan.png" alt="Manthan Singh" loading="lazy">
+            </div>
+            <div class="person-info">
+              <span>CHAIRPERSON</span>
+              <h3>Manthan Singh</h3>
+              <p>NSDC Newsletter Editor</p>
+              <a href="mailto:manthan.singh78@nmims.in">manthan.singh78@nmims.in <span>↗</span></a>
+            </div>
+          </article>
+          <article class="person-card reveal reveal-up">
+            <div class="person-photo">
+              <img src="assets/kalee.png" alt="Kalee Vyas" loading="lazy">
+            </div>
+            <div class="person-info">
+              <span>VICE CHAIRPERSON</span>
+              <h3>Kalee Vyas</h3>
+              <p>NSDC & Operations & Events</p>
+              <a href="mailto:kalee.vyas56@nmims.in">kalee.vyas56@nmims.in <span>↗</span></a>
+            </div>
+          </article>
+          <article class="person-card reveal reveal-up">
+            <div class="person-photo">
+              <img src="assets/pranati.png" alt="Pranati Bhoga" loading="lazy">
+            </div>
+            <div class="person-info">
+              <span>PRESIDENT</span>
+              <h3>Pranati Bhoga</h3>
+              <p>NSDC Social Media & Content Writing</p>
+              <a href="mailto:pranati.bhoga72@nmims.in">pranati.bhoga72@nmims.in <span>↗</span></a>
+            </div>
+          </article>
+          <article class="person-card reveal reveal-up">
+            <div class="person-photo">
+              <img src="assets/snigdha.png" alt="Snigdha Mishra" loading="lazy">
+            </div>
+            <div class="person-info">
+              <span>PRESIDENT</span>
+              <h3>Snigdha Mishra</h3>
+              <p>NSDC Newsletter Editor & Research & Development</p>
+              <a href="mailto:snigdha.mishra53@nmims.in">snigdha.mishra53@nmims.in <span>↗</span></a>
+            </div>
+          </article>
+          <article class="person-card reveal reveal-up">
+            <div class="person-photo">
+              <img src="assets/om.png" alt="Om Parekh" loading="lazy" style="object-fit: contain; object-position: center;">
+            </div>
+            <div class="person-info">
+              <span>PRESIDENT</span>
+              <h3>Om Parekh</h3>
+              <p>NSDC Marketing & Public Relations</p>
+              <a href="mailto:om.parekh49@nmims.in">om.parekh49@nmims.in <span>↗</span></a>
+            </div>
+          </article>
+          <article class="person-card reveal reveal-up">
+            <div class="person-photo">
+              <img src="assets/aarav.png" alt="Aarav Shah" loading="lazy">
+            </div>
+            <div class="person-info">
+              <span>PRESIDENT</span>
+              <h3>Aarav Shah</h3>
+              <p>NSDC Technical</p>
+              <a href="mailto:aarav.shah27@nmims.in">aarav.shah27@nmims.in <span>↗</span></a>
+            </div>
+          </article>
+        </div>
       </div>
-    </div></section>
+    </section>
 
-    <section class="connect section" id="connect"><div class="container"><div class="connect-box reveal"><div class="connect-kicker">06 · CONNECT</div><div class="connect-main"><p class="eyebrow">BUILD WITH US</p><h2>There is always<br><em>more to explore.</em></h2><p>Join the NSDC NMIMS community, follow our work and stay connected with upcoming activities, projects and opportunities.</p><a class="button button-light" href="mailto:nsdc.nmims@gmail.com">Get in touch <span>↗</span></a></div><div class="connect-side"><div><small>CHAPTER</small><p>NSDC · NMIMS MUMBAI</p></div><div><small>EMAIL</small><a href="mailto:nsdc.nmims@gmail.com">nsdc.nmims@gmail.com</a></div><div><small>SOCIAL</small><p>LinkedIn · Instagram</p></div></div></div></div></section>
+
+
+    <!-- Idea Canvas Section (Temporarily Disabled)
+    <section class="ideas section" id="ideas" data-section="08" data-section-name="COMMUNITY IDEAS">
+      <div class="container">
+        <div class="section-heading reveal reveal-up">
+          <div class="section-kicker">
+            <span>08</span>
+            <p>COMMUNITY IDEAS</p>
+          </div>
+          <div>
+            <h2>What should we <br><em>build next?</em></h2>
+            <p>Leave a sticker on our canvas to share your ideas, requests, or feedback. We're listening!</p>
+          </div>
+        </div>
+        
+        <div class="idea-canvas-wrapper reveal reveal-scale">
+          <div class="idea-controls">
+            <input type="text" id="ideaInput" placeholder="Type your idea here..." maxlength="40">
+            <button id="addIdeaBtn" class="button button-primary">Add Sticker</button>
+          </div>
+          <div class="idea-canvas" id="ideaCanvas">
+            <div class="sticker" style="top: 20%; left: 15%; transform: rotate(-5deg); background: #ffd6a5;">More AI Workshops!</div>
+            <div class="sticker" style="top: 45%; left: 60%; transform: rotate(8deg); background: #caffbf;">Hackathons 🚀</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- Connect Section -->
+    <section class="connect section" id="connect" data-section="08" data-section-name="CONNECT">
+      <div class="container">
+        <div class="connect-box reveal reveal-scale">
+          <div class="connect-kicker">08 · CONNECT</div>
+          <div class="connect-main">
+            <p class="eyebrow">BUILD WITH US</p>
+            <h2>There is always <br><em>more to explore.</em></h2>
+            <p>Join the NSDC NMIMS community, follow our work and stay connected with upcoming activities, projects and
+              opportunities.</p>
+            <a class="button button-light" href="mailto:nsdc.nmims@gmail.com">
+              <span>Get in touch</span>
+              <span class="btn-icon">↗</span>
+            </a>
+          </div>
+          <div class="connect-side">
+            <div>
+              <small>CHAPTER</small>
+              <p>NSDC · NMIMS MUMBAI</p>
+            </div>
+            <div>
+              <small>EMAIL</small>
+              <a href="mailto:nsdc.nmims@gmail.com">nsdc.nmims@gmail.com</a>
+            </div>
+            <div>
+              <small>SOCIAL</small>
+              <p><a href="https://in.linkedin.com/in/national-student-data-community-nsdc-3b4303435?trk=public_post_feed-actor-name" target="_blank" rel="noopener noreferrer">LinkedIn</a> · Instagram</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer"><div class="container"><div class="footer-top"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-copy"><strong>NSDC</strong><small>NMIMS · MUMBAI</small></span></a><p>Data for development.</p><a href="#top" class="back-top">BACK TO TOP ↑</a></div><div class="footer-bottom"><span>© 2026 NSDC NMIMS MUMBAI</span><span>NATIONAL STUDENT DATA CORPS · CHAPTER 01</span></div></div></footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="brand footer-brand" href="#hero">
+          <div class="brand-logo-wrapper">
+            <img src="assets/nsdc-logo.jpg" alt="NSDC Logo" class="brand-logo-img">
+          </div>
+          <span class="brand-copy">
+            <strong>NSDC</strong>
+            <small>NMIMS · MUMBAI</small>
+          </span>
+        </a>
+        <p>Data for development.</p>
+        <a href="#hero" class="back-top">BACK TO TOP ↑</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> NSDC NMIMS MUMBAI</span>
+        <span>NATIONAL STUDENT DATA CORPS · CHAPTER 01</span>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
+
 </html>
